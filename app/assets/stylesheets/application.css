@@ -25,7 +25,44 @@ background-color: lightgray;
 
 }
 
-.create-video-button{
-  margin-top: 40px;
+.upload-video-button{
+  margin: 40px 0 40px 0;
+border: none;
+text-align: center;
+text-decoration: none;
+ padding: 15px 32px;
+  font-family: 'Press Start 2P', cursive;
+font-size: 1em;
+}
 
+#choose-file-button{
+  margin: 40px 0 40px 0;
+border: none;
+text-align: center;
+text-decoration: none;
+ padding: 15px 32px;
+  font-family: 'Press Start 2P', cursive;
+font-size: 1em;
+}
+
+
+
+.video-js{
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+
+.crud-links{
+  text-align: center;
+}
+
+*{
+  font-family: 'Press Start 2P', cursive;
+}
+
+.header-text{
+  margin-top: 40px;
 }
