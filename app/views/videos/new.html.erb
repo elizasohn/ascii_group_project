@@ -1,5 +1,15 @@
-<h1>New Video</h1>
 
-<%= render 'form', video: @video %>
+<div class="new-wrapper">
+  <div class="header">
+    <h1>Welcome to ASCII LAND</h1>
+    <h2>Transform your vidoes into ascii art</h2>
+  </div>
+<div class="upload-button-wrapper">
 
-<%= link_to 'Back', videos_path %>
+  <%= render 'form', video: @video %>
+</div>
+
+</div>
+
+
+<%# link_to 'Back', videos_path   %>

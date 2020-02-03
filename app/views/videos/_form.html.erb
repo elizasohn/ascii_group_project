@@ -1,3 +1,7 @@
+
+
+
+
 <%= form_with(model: video, local: true) do |form| %>
   <% if video.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +15,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
 
   <div class="field">
     <%= form.label :clip %>
     <%= form.file_field :clip %>
   </div>
 
-  <div class="field">
-    <%= form.label :thumbnail %>
-    <%= form.file_field :thumbnail %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Upload Video', :class => 'create-video-button' %>
   </div>
 <% end %>

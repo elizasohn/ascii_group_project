@@ -1,18 +1,27 @@
+
+<div class="new-wrapper">
+  <div class="header">
+    <h1>Welcome to ASCII LAND</h1>
+    <h2>Transform your vidoes into ascii art</h2>
+  </div>
+<div class="upload-button-wrapper">
+
+  <%= render 'form', video: @video %>
+</div>
+
+</div>
+
+
+
 <p id="notice"><%= notice %></p>
 <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
 
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
-<p>
-  <strong>Title:</strong>
-  <%= @video.title %>
-</p>
 
-<div style="width:400px; height:400px">
-  <%= image_tag(@video.thumbnail, style:'width:100%;height:auto') %>
-</div>
+
 <p>
-  <div style="width:400px; height:400px">
+  <div>
     <% video_tag(url_for(@video.clip), style:'width:100%;height:auto', controls: '') %>
   </div>
 
@@ -23,15 +32,12 @@
   preload="auto"
   width="640"
   height="264"
-  poster="<%= url_for(@video.thumbnail) %>"
   data-setup="{}"
   >
   <source src="<%= url_for(@video.clip)%>" type="video/mp4" />
-
 </video>
 
-<strong>Description:</strong>
-<%= @video.description %>
+
 </p>
 
 <%= link_to 'Edit', edit_video_path(@video) %> |
