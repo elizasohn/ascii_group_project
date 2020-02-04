@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2020_02_03_180020) do
   end
 
   create_table "videos", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
