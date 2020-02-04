@@ -1,4 +1,17 @@
 
+<%# validation %>
+
+<% if video.errors.any? %>
+<h2 class="error">ERROR, ERROR, ERROR</h2>
+<h3 class="error">You have an error.</h3>
+<ul>
+  <% video.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
 
 
 

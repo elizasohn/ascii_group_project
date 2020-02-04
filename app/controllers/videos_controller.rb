@@ -26,21 +26,29 @@ class VideosController < ApplicationController
   # POST /videos
   # POST /videos.json
   def create
-    @video = Video.new(video_params)
+    # binding.pry
+    if params["video"]
+      @video = Video.new(video_params)
 
 
-    respond_to do |format|
-      if @video.save
-        format.html { redirect_to @video, notice: 'Video was successfully created.' }
-        format.json { render :show, status: :created, location: @video }
+      respond_to do |format|
+        if @video.save
+          format.html { redirect_to @video, notice: 'Video was successfully created.' }
+          format.json { render :show, status: :created, location: @video }
 
 
 
 
-      else
-        format.html { render :new }
-        format.json { render json: @video.errors, status: :unprocessable_entity }
+        else
+          format.html { render :new }
+          format.json { render json: @video.errors, status: :unprocessable_entity }
+        end
+
       end
+
+    else
+      @video = Video.new
+      render :new
     end
   end
 
