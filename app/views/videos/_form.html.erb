@@ -1,4 +1,17 @@
 
+<%# validation %>
+
+<% if video.errors.any? %>
+<h2 class="error">ERROR, ERROR, ERROR</h2>
+<h3 class="error">You have an error.</h3>
+<ul>
+  <% video.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
 
 
 
@@ -17,11 +30,11 @@
 
 
   <div class="field">
-    <%= form.label :clip %>
+    <%# form.label :clip  %>
     <%= form.file_field :clip %>
   </div>
 
   <div class="actions">
-    <%= form.submit 'Upload Video', :class => 'create-video-button' %>
+    <%= form.submit 'Upload Video', :class => 'upload-video-button' %>
   </div>
 <% end %>
