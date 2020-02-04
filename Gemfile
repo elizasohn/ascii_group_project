@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 #ASCII/Pixel Art
-gem 'rmagick'
+gem 'mini_magick'
 gem 'asciiart'
 gem 'tco'
 gem 'streamio-ffmpeg'
