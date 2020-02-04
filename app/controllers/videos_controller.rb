@@ -10,6 +10,8 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
+    @url = url_for(rails_blob_path(@video.clip))
+    # binding.pry
   end
 
   # GET /videos/new
