@@ -6,55 +6,19 @@
     <h1>Welcome to ASCII LAND</h1>
     <h2>Transform your videos into ascii art</h2>
   </div>
-<div class="upload-button-wrapper">
+  <body>
   <video src="https://i.imgur.com/F352403.mp4" controls></video>
+
 <canvas id="video-scene"></canvas>
-  <%= render 'form', video: @video %>
-</div>
-
-</div>
-
-<p id="notice"><%= notice %></p>
-<link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
-
-<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-<script src="aalib.js"></script>
-
-
-<!-- Display an image from the asset pipeline -->
-<img src="/assets/frame_3.jpg" alt="edit" />
-
-<p>
-  <div>
-    <% video_tag(url_for(@video.clip), style:'width:100%;height:auto', controls: '') %>
-  </div>
-
-  <video src="https://i.imgur.com/F352403.mp4" controls></video>
-
-
-
-
-
-
-  <video
-  id="my-video"
-  class="video-js"
-  controls
-  preload="auto"
-  width="640"
-  height="264"
-  data-setup="{}"
-  >
-  <source src="<%= url_for(@video.clip)%>" type="video/mp4" />
-</video>
-
-
-</p>
-
-<div class="crud-links">
-  <%= link_to 'Edit', edit_video_path(@video) %> |
-  <%= link_to 'Back', videos_path %>
-
-</div>
-
-<script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
+<script type="text/javascript" src="../javascripts/aalib.js"></script>
+<script type="text/javascript">
+    aalib.read.video.fromVideoElement(document.querySelector("video"))
+        .map(aalib.aa({ width: 165, height: 68 }))
+        .map(aalib.render.canvas({
+            width: 696,
+            height: 476,
+            el: document.querySelector("#video-scene")
+        }))
+        .subscribe();
+</script>
+</body>
