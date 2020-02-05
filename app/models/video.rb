@@ -1,11 +1,27 @@
 class Video < ApplicationRecord
   has_one_attached :clip
   validate :image_attached
-  
+
   def extract_frames url
     movie = FFMPEG::Movie.new(url)
     movie.screenshot("screenshot_%d.jpg", { vframes: 20, frame_rate: '1/6' }, validate: false)
   end
+
+  def ascii_it
+    resource = open('./assets/images/test.jpg')
+    image = Magick::ImageList.new
+    image.from_blob resource.read
+    image = image.scale(150 / image.columns.to_f)
+    image = image.scale(image.columns, image.rows / 1.7)
+    cur_row = 0
+    image.each_pixel do |pixel, col, row|
+      color = pixel.to_color(Magick::AllCompliance, false, 8)
+      if cur_row != row
+        puts
+        cur_row = row
+      end
+      print Paint[' ', '', color]
+    end
 
   private
 
