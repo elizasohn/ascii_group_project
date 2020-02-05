@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 #ASCII/Pixel Art
+gem 'aalib', :github => 'elbongurk/aalib'
 gem 'mini_magick'
 # gem 'asciiart'
 gem 'tco'
