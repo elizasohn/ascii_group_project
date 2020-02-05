@@ -7,18 +7,24 @@
     <h2>Transform your videos into ascii art</h2>
   </div>
   <body>
-  <video src="https://i.imgur.com/F352403.mp4" controls></video>
+
+        <!-- <video src="https://i.imgur.com/F352403.mp4" controls></video>
+        <canvas id="video-scene" width="696" height="476" style="background-color: rgb(255, 255, 255);"></canvas>
+        <script type="text/javascript" src="../assets/javascripts/aalib.js"></script>
+        <script type="text/javascript">
+          aalib.read.video.fromVideoElement(document.querySelector("video"))
+
+          .pipe(aalib.aa({ width: 165, height: 68 }))
+          .pipe(aalib.render.canvas({
+              width: 696,
+              height: 476,
+              el: document.querySelector("#video-scene")
+          }))
+          .subscribe();
+          </script>
+           -->
+
+</body>
+<video src="https://i.imgur.com/F352403.mp4" controls></video>
 
 <canvas id="video-scene"></canvas>
-<script type="text/javascript" src="../javascripts/aalib.js"></script>
-<script type="text/javascript">
-    aalib.read.video.fromVideoElement(document.querySelector("video"))
-        .map(aalib.aa({ width: 165, height: 68 }))
-        .map(aalib.render.canvas({
-            width: 696,
-            height: 476,
-            el: document.querySelector("#video-scene")
-        }))
-        .subscribe();
-</script>
-</body>
