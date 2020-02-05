@@ -1,10 +1,7 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
-  def extract_frames url
-    movie = FFMPEG::Movie.new(url)
-    movie.screenshot("screenshot_%d.jpg", { vfames: 20, frame_rate: '1/1' }, validate: false)
-  end
+
   # GET /videos
   # GET /videos.json
   def index

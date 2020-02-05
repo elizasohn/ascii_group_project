@@ -92,6 +92,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
+    paint (2.1.1)
     pg (1.2.2)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -186,6 +187,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mini_magick
+  paint
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 3.11)
