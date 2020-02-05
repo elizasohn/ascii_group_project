@@ -7,14 +7,20 @@ class Video < ApplicationRecord
     puts "made it to extract_frames"
     movie = FFMPEG::Movie.new(url)
     puts "made it past movie declaration"
+    duration = movie.duration
+    puts "------------"
+    puts duration
+    puts "------------"
+    frame_captures = (duration * 6).floor
+    puts frame_captures
     movie.screenshot(
       "app/assets/images/frame_%d.jpg",
-      { vframes: 30, frame_rate: '1.5' },
+      { vframes: frame_captures, frame_rate: duration },
       validate: false
     )
 
     frame_num = 1;
-    20.times {
+    frame_captures.times {
       img = Magick::Image.read("app/assets/images/frame_#{frame_num}.jpg").first
       legend = Magick::Draw.new
       legend.stroke = 'transparent'
@@ -40,7 +46,7 @@ class Video < ApplicationRecord
       'app/assets/images/slideshow.mp4', # output
       { resolution: "320x240" },
       input: "app/assets/images/frame_%d.jpg",
-      input_options: { framerate: '30' }
+      input_options: { framerate: '20' }
     )
     slideshow = slideshow_transcoder.run
   end
