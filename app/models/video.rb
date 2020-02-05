@@ -10,7 +10,11 @@ class Video < ApplicationRecord
     puts movie.width
     puts movie.height
     # movie.screenshot("screenshot.bmp", seek_time: 5, resolution: '320x240')
-    movie.screenshot("app/assets/images/frame_%d.jpg", { vframes: 10, frame_rate: '1/2' }, validate: false)
+    movie.screenshot(
+      "app/assets/images/frame_%d.jpg", 
+      { vframes: 20, frame_rate: '1.5' }, 
+      validate: false
+    )
   end
 
   private

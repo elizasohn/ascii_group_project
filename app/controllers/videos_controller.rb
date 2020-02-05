@@ -12,6 +12,18 @@ class VideosController < ApplicationController
   def show
     # breaks without @url?
     @url = url_for(@video.clip)
+    
+    if @video
+      slideshow_transcoder = FFMPEG::Transcoder.new(
+        '', 
+        'app/assets/images/slideshow.mp4', # output
+        { resolution: "320x240" },
+        input: "app/assets/images/frame_%d.jpg",
+        input_options: { framerate: '30' }
+      )
+
+      slideshow = slideshow_transcoder.run
+    end
   end
 
   # GET /videos/new
@@ -22,8 +34,9 @@ class VideosController < ApplicationController
   # GET /videos/1/edit
   def edit
     @url = url_for(@video.clip)
-    # routes to URL parameter at Video.rb #extract_frames 
     @video.extract_frames(@url)
+    # routes to URL parameter at Video.rb #extract_frames 
+    
   end
 
   # POST /videos
