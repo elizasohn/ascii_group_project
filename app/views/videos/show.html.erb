@@ -1,49 +1,47 @@
 
 <div class="new-wrapper">
-  <div class="header">
-    <h1>Welcome to ASCII LAND</h1>
-    <h2>Transform your videos into ascii art</h2>
-  </div>
+<div class="header">
+  <h1>Welcome to ASCII LAND</h1>
+  <h2>Transform your videos into ascii art</h2>
+</div>
 <div class="upload-button-wrapper">
 
-  <%= render 'form', video: @video %>
+<%= render 'form', video: @video %>
 </div>
 
 </div>
-
-<%= url_for(@video.extract_frames(@url))%>
-
 
 <p id="notice"><%= notice %></p>
 <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
 
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
-
+<!-- Display an image from the asset pipeline -->
+<img src="/assets/frame_3.jpg" alt="edit" />
 
 <p>
-  <div>
-    <% video_tag(url_for(@video.clip), style:'width:100%;height:auto', controls: '') %>
-  </div>
+<div>
+  <% video_tag(url_for(@video.clip), style:'width:100%;height:auto', controls: '') %>
+</div>
 
-  <video
-  id="my-video"
-  class="video-js"
-  controls
-  preload="auto"
-  width="640"
-  height="264"
-  data-setup="{}"
-  >
-  <source src="<%= url_for(@video.clip)%>" type="video/mp4" />
+<video
+id="my-video"
+class="video-js"
+controls
+preload="auto"
+width="640"
+height="264"
+data-setup="{}"
+>
+<source src="<%= url_for(@video.clip)%>" type="video/mp4" />
 </video>
 
 
 </p>
 
 <div class="crud-links">
-  <%= link_to 'Edit', edit_video_path(@video) %> |
-  <%= link_to 'Back', videos_path %>
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>
 
 </div>
 

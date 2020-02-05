@@ -2,11 +2,6 @@ class Video < ApplicationRecord
   has_one_attached :clip
   validate :image_attached
 
-  def extract_frames url
-    movie = FFMPEG::Movie.new(url)
-    movie.screenshot("screenshot_%d.jpg", { vframes: 20, frame_rate: '1/6' }, validate: false)
-  end
-
   def ascii_it
     resource = open('./assets/images/test.jpg')
     image = Magick::ImageList.new
@@ -22,6 +17,18 @@ class Video < ApplicationRecord
       end
       print Paint[' ', '', color]
     end
+  end 
+
+  def extract_frames url
+    puts "made it to extract_frames"
+    movie = FFMPEG::Movie.new(url)
+    puts "made it past movie declaration"
+    puts movie.duration
+    puts movie.width
+    puts movie.height
+    # movie.screenshot("screenshot.bmp", seek_time: 5, resolution: '320x240')
+    movie.screenshot("app/assets/images/frame_%d.jpg", { vframes: 10, frame_rate: '1/2' }, validate: false)
+  end
 
   private
 
