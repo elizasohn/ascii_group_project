@@ -12,6 +12,7 @@ class VideosController < ApplicationController
   def show
     # breaks without @url?
     @url = url_for(@video.clip)
+    @video.ascii_it
   end
 
   # GET /videos/new
@@ -24,6 +25,7 @@ class VideosController < ApplicationController
     @url = url_for(@video.clip)
     # routes to URL parameter at Video.rb #extract_frames
     @video.extract_frames(@url)
+
   end
 
   # POST /videos

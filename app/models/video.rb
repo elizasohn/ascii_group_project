@@ -3,11 +3,11 @@ class Video < ApplicationRecord
   validate :image_attached
 
   def ascii_it
-    resource = open('./assets/images/test.jpg')
+    resource = open('app/assets/images/test.jpg')
     image = Magick::ImageList.new
     image.from_blob resource.read
-    image = image.scale(150 / image.columns.to_f)
-    image = image.scale(image.columns, image.rows / 1.7)
+    image = image.scale(300 / image.columns.to_f)
+    image = image.scale(image.columns, image.rows)
     cur_row = 0
     image.each_pixel do |pixel, col, row|
       color = pixel.to_color(Magick::AllCompliance, false, 8)
@@ -15,9 +15,9 @@ class Video < ApplicationRecord
         puts
         cur_row = row
       end
-      print Paint[' ', '', color]
+      puts Paint[' ', '', color]
     end
-  end 
+  end
 
   def extract_frames url
     puts "made it to extract_frames"
