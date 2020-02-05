@@ -2,17 +2,14 @@ class Video < ApplicationRecord
   has_one_attached :clip
   validate :image_attached
 
+
   def extract_frames url
     File.delete("app/assets/images/slideshow.mp4") if File.exist?("app/assets/images/slideshow.mp4")
     puts "made it to extract_frames"
     movie = FFMPEG::Movie.new(url)
     puts "made it past movie declaration"
     duration = movie.duration
-    puts "------------"
-    puts duration
-    puts "------------"
     frame_captures = (duration * 6).floor
-    puts frame_captures
     movie.screenshot(
       "app/assets/images/frame_%d.jpg",
       { vframes: frame_captures, frame_rate: duration },
@@ -44,7 +41,7 @@ class Video < ApplicationRecord
     slideshow_transcoder = FFMPEG::Transcoder.new(
       '',
       'app/assets/images/slideshow.mp4', # output
-      { resolution: "320x240" },
+      { resolution: "640x480" },
       input: "app/assets/images/frame_%d.jpg",
       input_options: { framerate: '20' }
     )
