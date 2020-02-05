@@ -12,10 +12,10 @@ class Video < ApplicationRecord
     image.each_pixel do |pixel, col, row|
       color = pixel.to_color(Magick::AllCompliance, false, 8)
       if cur_row != row
-        puts
+        
         cur_row = row
       end
-      puts Paint[' ', '', color]
+      print Paint[' ', '', color]
     end
   end
 
