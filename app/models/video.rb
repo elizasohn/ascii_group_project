@@ -1,23 +1,57 @@
 class Video < ApplicationRecord
   has_one_attached :clip
   validate :image_attached
+  # 
+  # def ascii_it(imagePath, asciiPath)
+  #   bytes = "\xdb\xb2\xb1\xb0 "
+  #
+  #   image = Magick::Image.read(imagePath).first
+  #   width = image.columns
+  #   height = image.rows
+  #   pixels = image.dispatch(0, 0, width, height, 'I', true)
+  #   output = ''
+  #   height.times do |y|
+  #     line = ''
+  #     width.times do |x|
+  #       pixel = pixels[x + y + width]
+  #       #invert
+  #       pixel = 1.0 - pixel
+  #       index = (pixel * (bytes.size - 1)).round
+  #       line += bytes[index]
+  #     end
+  #     line += "\r\n" if y < height - 1
+  #     output += line
+  #   end
+  #   Nil.writeFile(asciiPath, output)
+  # end
+  #
+  # if ARGV.size !=2
+  #   puts 'Usage:'
+  #   puts "ruby #(File.basename(__FILE__)) <image> <ASCII output>"
+  # end
+  #
+  # imagePath = ARGV[0]
+  # asciiPath = ARGV[1]
 
-  def ascii_it
-    resource = open('app/assets/images/test.jpg')
-    image = Magick::ImageList.new
-    image.from_blob resource.read
-    image = image.scale(300 / image.columns.to_f)
-    image = image.scale(image.columns, image.rows)
-    cur_row = 0
-    image.each_pixel do |pixel, col, row|
-      color = pixel.to_color(Magick::AllCompliance, false, 8)
-      if cur_row != row
-        
-        cur_row = row
-      end
-      print Paint[' ', '', color]
-    end
-  end
+  # convertImage(imagePath, asciiPath)
+
+
+
+  #   resource = open('app/assets/images/test.jpg')
+  #   image = Magick::ImageList.new
+  #   image.from_blob resource.read
+  #   image = image.scale(400 / image.columns.to_f)
+  #   image = image.scale(image.columns, image.rows / 6)
+  #   cur_row = 0
+  #   image.each_pixel do |pixel, col, row|
+  #     color = pixel.to_color(Magick::AllCompliance, false, 8)
+  #     if cur_row != row
+  #
+  #       cur_row = row
+  #     end
+  #     print Paint[' ', '', color]
+  #   end
+  # end
 
   def extract_frames url
     puts "made it to extract_frames"

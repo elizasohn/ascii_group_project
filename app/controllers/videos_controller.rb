@@ -12,7 +12,7 @@ class VideosController < ApplicationController
   def show
     # breaks without @url?
     @url = url_for(@video.clip)
-    @video.ascii_it
+    # @video.ascii_it('app/assets/images/test.jpg', 'app/assets/images')
   end
 
   # GET /videos/new
