@@ -10,23 +10,14 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
+    @video = Video.find(params[:id])
     # breaks without @url?
-    @url = url_for(@video.clip)
-    # binding.pry
-    # if @frames
-    # slideshow_transcoder = FFMPEG::Transcoder.new(
-    #   '',
-    #   'app/assets/images/slideshow.mp4', # output
-    #   { resolution: "320x240" },
-    #   input: "app/assets/images/frame_%d.jpg",
-    #   input_options: { framerate: '30' }
-    # )
-    # slideshow = slideshow_transcoder.run
-    # end
+    # @url = url_for(@video.clip)
   end
 
   # GET /videos/new
   def new
+    File.delete("app/assets/images/slideshow.mp4") if File.exist?("app/assets/images/slideshow.mp4")
     @video = Video.new
   end
 
