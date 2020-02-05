@@ -1,10 +1,6 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
-  def extract_frames url
-    movie = FFMPEG::Movie.new(url)
-    movie.screenshot("screenshot_%d.jpg", { vfames: 20, frame_rate: '1/1' }, validate: false)
-  end
   # GET /videos
   # GET /videos.json
   def index
@@ -14,9 +10,8 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
+    # breaks without @url?
     @url = url_for(@video.clip)
-
-    # binding.pry
   end
 
   # GET /videos/new
@@ -26,6 +21,9 @@ class VideosController < ApplicationController
 
   # GET /videos/1/edit
   def edit
+    @url = url_for(@video.clip)
+    # routes to URL parameter at Video.rb #extract_frames 
+    @video.extract_frames(@url)
   end
 
   # POST /videos

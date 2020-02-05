@@ -1,4 +1,3 @@
-
 <div class="new-wrapper">
   <div class="header">
     <h1>Welcome to ASCII LAND</h1>
@@ -11,15 +10,13 @@
 
 </div>
 
-<%= url_for(@video.extract_frames(@url))%>
-
-
 <p id="notice"><%= notice %></p>
 <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
 
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
-
+<!-- Display an image from the asset pipeline -->
+<img src="/assets/frame_3.jpg" alt="edit" />
 
 <p>
   <div>

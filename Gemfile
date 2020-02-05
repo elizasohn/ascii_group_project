@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 #ASCII/Pixel Art
 gem 'mini_magick'
-gem 'asciiart'
+# gem 'asciiart'
 gem 'tco'
 gem 'streamio-ffmpeg'
 
@@ -48,6 +48,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
+  gem 'rbtrace'
 end
 
 group :development do
