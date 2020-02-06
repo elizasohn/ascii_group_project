@@ -37,11 +37,7 @@ class Video < ApplicationRecord
     #   frames.write("app/assets/images/frame_#{frame_num}.jpg")
     #   frame_num = frame_num + 1
     # }
-    dir = 'app/assets/images'
-    directory_count = Dir[File.join(dir, '**', '*')].count { |file| File.file?(file) }
-
-    # 1.times { File.delete("app/assets/images/frame_%djpg") }
-
+    
     slideshow_transcoder = FFMPEG::Transcoder.new(
       '',
       'app/assets/images/slideshow.mp4', # output
@@ -50,6 +46,13 @@ class Video < ApplicationRecord
       input_options: { framerate: '20' }
     )
     slideshow = slideshow_transcoder.run
+
+    dir = 'app/assets/images'
+    directory_count = Dir[File.join(dir, '**', '*')].count { |file| File.file?(file) }
+
+    file_deletion_count = directory_count - 2
+    file_deletion_count.times { File.delete("app/assets/images/frame_#{file_deletion_count}.jpg")
+  binding.pry }
   end
 
   private
