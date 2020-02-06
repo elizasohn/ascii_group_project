@@ -31,4 +31,4 @@
 /app/assets/ascii_frames
 
 #Ignore Gemfile.lock
-Gemfile.lock
+/Gemfile.lock
