@@ -29,3 +29,6 @@
 # Ignore images
 /app/assets/images
 /app/assets/ascii_frames
+
+#Ignore Gemfile.lock
+Gemfile.lock
