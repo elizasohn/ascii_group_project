@@ -18,11 +18,10 @@
   <%= yield %>
 
   <script>
-    const soundtrack = new Audio('/wav/click1.wav');
+    const soundtrack = new Audio('/wav/soundtrack.mp3');
     soundtrack.autoplay = true;
     soundtrack.load();
-
-
+    soundtrack.play()
   </script>
 
 

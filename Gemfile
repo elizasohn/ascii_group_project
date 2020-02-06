@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 
 #Image/Video Manipulation
 gem 'mini_magick'
-gem 'rmagick'
+# gem 'rmagick'
 gem 'streamio-ffmpeg'
 
 # Use ActiveStorage variant
