@@ -31,6 +31,20 @@
 
 <hr>
   <div class="actions">
+    <%= audio_tag "chime.wav", class: "audio-play", :id => "audio-tag" %>
     <%= form.submit 'Upload Video', :class => 'upload-video-button' %>
   </div>
 <% end %>
+
+ 
+<!-- <audio id="en-route" class="audio_player" preload="true">
+  <source src="audios/en-route.wav" type="audio/wav">
+  </audio>
+  <script>
+    $('#to').click(function (e) {
+      e.preventDefault();
+      $('#to-hospital')[0].currentTime = 0;
+      $('#to-hospital')[0].play();
+      return true;
+    });
+  </script> -->
