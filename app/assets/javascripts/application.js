@@ -14,3 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require imgToAscii
+//= require frames
+//= require jquery
+//= require jquery_ujs

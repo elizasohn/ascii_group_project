@@ -1,13 +1,12 @@
-
 <div class="new-wrapper">
-<div class="header">
-  <h1>Welcome to ASCII LAND</h1>
-  <h2>Transform your videos into ascii art</h2>
-</div>
-<div class="upload-button-wrapper">
+  <div class="header">
+    <h1>Welcome to ASCII LAND</h1>
+    <h2>Transform your videos into ascii art</h2>
+  </div>
+  <div class="upload-button-wrapper">
 
-<%= render 'form', video: @video %>
-</div>
+    <%= render 'form', video: @video %>
+  </div>
 
 </div>
 
@@ -16,132 +15,111 @@
 
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
-
-
   <!-- <script src="https://raw.githubusercontent.com/victorqribeiro/imgToAscii/v1.3/src/imgToAscii.js"></script> -->
 	<!-- <script src="../assets/javascripts/imgToAscii.js"></script> -->
-<!--
-    // let first = document.getElementById('one');
-    // setTimeout(() => {
-    //   first.style.display = 'none';
-    //   second.style.display = 'block';
-    //   setTimeout(() => {
-    //
-    //     setTimeout(() => {
-    //
-    //     }, 500)
-    //   }, 500)
-    // }, 500)
-    //
-    //
-    // function divAndTimeout(i) {
-    //   if (i <= 1) {
-    //
-    //   } else {
-    //     setTimeout(() => {
-    //
-    //       let thing = new imgToAscii('/assets/frame_' + i + '.jpg', .15);
-    //       thing.display;
-    //       divAndTimeout(i-1);
-    //     })
-    //   }
-    // } -->
+<!-- <script>
+  setInterval(function() {
+         $("#one").show();
+         setTimeout(function() {
+             $("#one").fadeOut('normal');
+         });
+     },1000);
+</script> -->
+
+<!-- <div id="two">
+  test
+  </div> -->
+  <div id="one">
+    <script>
+      let one = new imgToAscii('/assets/frame_1.jpg', .1);
+      one.display();
+    </script>
+  </div>
+
+  <div id="two">
+    test
+    <script>
+     let two = new imgToAscii('/assets/frame_2.jpg', .1);
+      two.display();
+    </script>
+  </div>
+
+  <div id="three">
+    <script>
+     let three = new imgToAscii('/assets/frame_3.jpg', .1);
+      three.display();
+    </script>
+  </div>
+<!-- <script>
+  setInterval(function() {
+         $("#two").show();
+         setTimeout(function() {
+             $("#two").fadeOut('normal');
+         });
+     },1000);
+</script> -->
+<!-- <span id="frames"></span> -->
 
 
 
-  <div id="1">
-		one.display();
-  </div>
-  <div id="2">
-    two.display();
-  </div>
-  <div id="3">
-    three.display();
-  </div>
-  <div id="4">
-    four.display();
-  </div>
-  <div id="5">
-    five.display();
-  </div>
-  <div id="6">
-    six.display();
-  </div>
-  <div id="7">
-    seven.display();
-  </div>
-  <div id="8">
-    eight.display();
-  </div>
-  <div id="9">
-    nine.display();
-  </div>
-  <div id="10">
-    ten.display();
-  </div>
-  <div id="11">
-    eleven.display();
-  </div>
-  <div id="12">
-    twelve.display();
-  </div>
-  <div id="13">
-    thirteen.display();
-  </div>
-  <div id="14">
-    fourteen.display();
-  </div>
-  <div id="15">
-    fifteen.display();
-  </div>
 
+<!-- // let three = new imgToAscii('/assets/frame_3jpg', .1);
+// let four = new imgToAscii('/assets/frame_4.jpg', .1);
+// let five = new imgToAscii('/assets/frame_5.jpg', .1);
+// let six = new imgToAscii('/assets/frame_6.jpg', .1);
+// let seven = new imgToAscii('/assets/frame_7.jpg', .1);
+// let eight = new imgToAscii('/assets/frame_8.jpg', .1);
+// let nine  = new imgToAscii('/assets/frame_9.jpg', .1);
+// let ten = new imgToAscii('/assets/frame_10.jpg', .1);
+// let eleven = new imgToAscii('/assets/frame_11.jpg', .1);
+// let twelve = new imgToAscii('/assets/frame_12.jpg', .1);
+// let thirteen = new imgToAscii('/assets/frame_13.jpg', .1);
+// let fourteen = new imgToAscii('/assets/frame_14.jpg', .1);
+// let fifteen = new imgToAscii('/assets/frame_15.jpg', .1); -->
 
-  <!-- var frames = [one.display(), two.display(), three.display()];
-
-  for (var i = 1; i <= 3; ++i) {
-  (function(index) {
-    setTimeout(function() {
-      (frames[index-1]);
-      }, i * 1000);
-    })(i);
-  } -->
 
 	<div> Some text </div>
-	<!-- <script>
-		let eu = new imgToAscii('/assets/test.jpg',0.8);
-		eu.display();
-		eu.displayColor('gray');
-	</script> -->
 
 
-
-<!-- Display an image from the asset pipeline -->
-<img src="/assets/frame_3.jpg" alt="edit" />
-
+<!-- Display slideshow.mp4 -->
 <p>
-<div>
-  <% video_tag(url_for(@video.clip), style:'width:100%;height:auto', controls: '') %>
-</div>
-
-<video
-id="my-video"
-class="video-js"
-controls
-preload="auto"
-width="640"
-height="264"
-data-setup="{}"
->
-<source src="<%= url_for(@video.clip)%>" type="video/mp4" />
-</video>
-
-
+  <video
+  id="my-video"
+  class="video-js"
+  controls
+  preload="auto"
+  width="640"
+  height="264"
+  data-setup="{}"
+  >
+  <source src="<%= url_for("/assets/slideshow.mp4")%>" type="video/mp4" />
+  </video>
 </p>
 
-<div class="crud-links">
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+<p>
+  <div>
+    <% video_tag(url_for(@video.clip), style:'width:100%;height:auto', controls: '') %>
+  </div>
 
-</div>
+  <video
+  id="my-video"
+  class="video-js"
+  controls
+  preload="auto"
+  width="640"
+  height="264"
+  data-setup="{}"
+  >
+  <source src="<%= url_for(@video.clip)%>" type="video/mp4" />
+  </video>
+</p>
+
+
+
+  <div class="upload-button-wrapper">
+    <%= link_to '<button class="upload-video-button" type="button">Chop Your Video Up!!!</button>'.html_safe, edit_video_path(@video) %>
+  </div>
+
+
 
 <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>

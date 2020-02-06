@@ -66,3 +66,21 @@ font-size: 1em;
 .header-text{
   margin-top: 40px;
 }
+
+#one {
+  display: none;
+  animation-name: go;
+  animation-duration: 4s;
+}
+
+#two {
+  display: none;
+  animation-name: go;
+  animation-duration: 4s;
+  animation-delay: 4s;
+}
+
+@keyframes go {
+  0% {display: none;}
+  100% {display: show;}
+}

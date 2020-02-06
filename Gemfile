@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 #ASCII/Pixel Art
 gem 'paint'
 gem 'mini_magick'
-gem 'asciiart'
+# gem 'asciiart'
 gem 'tco'
 gem 'streamio-ffmpeg'
 

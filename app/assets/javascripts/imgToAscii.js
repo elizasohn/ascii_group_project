@@ -89,5 +89,5 @@ class imgToAscii {
 		await this.loadImage;
 		pre.innerHTML = this.stringColor;
 	}
-
+      // let ele = new imgToAscii('/assets/frame_1.jpg', .1);
 }
