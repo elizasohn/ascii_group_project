@@ -16,7 +16,7 @@ Ascii Land is a...
 
  2. Navigate to the directory (folder) that contains your browser's downloads.
  3. Double-click on **Ascii Land** directory (folder).
- 4. Open directory contents by extracting/unzipping documents from folder.
+ 4. Open the directory contents by extracting/unzipping the documents from the folder.
  5. Make sure your system has `Ruby 2.6.5`, `Rails 5.2.4.1` or higher, and `NPM` installed.
 
 ##### Mac OS Installation
@@ -26,23 +26,24 @@ On OS X with Homebrew, install ImageMagick:
 ```sh
 brew install imagemagick@6
 ```
- 1. If any errors occur here. Refer to **Troubleshooting** below these instructions.
+ 1. If any errors occur here, refer to the **Troubleshooting** section below these instructions.
  2. With your tools installed, and within the folder, run `bundle install`. Make sure all gems install correctly before moving on.
- 3. Next run `rake db:create`, `rake db:migrate`, and `rake db:test:prepare`. Make sure all processes complete successfully.
+ 3. Next, run `rake db:create` and `rake db:migrate`. Make sure all processes complete successfully.
  4. Finally, run `rails s` or `rails server` and navigate to `localhost:3000` to use **Ascii Land**.
 
 ##### Windows OS Installation
 
 To install ImageMagick on Windows OS, use the [official link](https://www.imagemagick.org/script/download.php#windows) on ImageMagick's website. Navigate to `ImageMagick 6.9.6-0 Q16 x64 2016-10-02`.  
+  
 **The most crucial steps during installation of ImageMagick on Windows is to check the following two options:** 
 1. **Add application directory to your system path** – otherwise Windows won’t recognize any of the commands and tell you something like ‘convert’ is not recognized as an internal or external command, operable program or batch file.
 
-2. **Install legacy utilities** – the new version of ImageMagick got rid of the old convert and mogrify commands in favour of a single command. Checking this box will allow you to still use the old convert and mogrify commands.
+2. **Install legacy utilities** – the new version of ImageMagick got rid of the old convert and mogrify commands in favor of a single command. Checking this box will allow you to still use the old convert and mogrify commands.
 
 ![installing ImageMagick on Windows](app/assets/readme/image-magick-windows.png)
 
  1. With your tools installed, and within the folder, run `bundle install`. Make sure all gems install correctly before moving on.
- 2. Next run `rake db:create`, `rake db:migrate`, and `rake db:test:prepare` . Make sure all processes complete successfully.
+ 2. Next run `rake db:create` and `rake db:migrate`. Make sure all processes complete successfully.
  3. Finally, run `rails s` or `rails server` and navigate to `localhost:3000` to use **Ascii Land**.
 
 - - -
