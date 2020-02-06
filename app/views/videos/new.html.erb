@@ -1,16 +1,16 @@
+<div class="whole-wrapper">
 
-<div class="new-wrapper">
-  <div class="header">
-    <h1 class="header-text">Welcome to ASCII LAND</h1>
-    <h2 class="subheader-text">Transform your vidoes into ascii art</h2>
+
+  <div class="new-wrapper">
+    <div class="header">
+      <h1 class="header-text">Welcome to ASCII LAND</h1>
+      <h2 class="subheader-text">Transform your vidoes into ascii art</h2>
+    </div>
+
+    <div class="upload-button-wrapper">
+      <%= render 'form', video: @video %>
+    </div>
   </div>
-
-<div class="upload-button-wrapper">
-  <%= render 'form', video: @video %>
-</div>
-<%# <%= image_tag("man1.png", :class => "man-head") %> %>
-
 </div>
 
-
-<%# link_to 'Back', videos_path   %>
+<!-- link_to 'Back', videos_path  -->
