@@ -70,10 +70,6 @@
 </div>
 
 <br>
-<div class="view-ascii-button-div">
-  <button id="ascii-refresh" type="button" onClick="refreshPage()">View Ascii</button>
-
-</div>
 
 <script>
   function refreshPage(){
@@ -81,28 +77,11 @@
   }
 </script>
 
-<!-- Display slideshow.mp4 -->
-<p>
-  <video
-  id="my-video"
-  class="video-js"
-  controls
-  preload="auto"
-  width="640"
-  height="264"
-  data-setup="{}"
-  >
-  <source src="<%= url_for("/assets/slideshow.mp4")%>" type="video/mp4" />
-  </video>
-</p>
+<div class="upload-button-wrapper">
+  <%= link_to '<button class="upload-video-button" type="button">Convert Video to Ascii</button>'.html_safe, edit_video_path(@video) %>
+</div>
 
 <p>
-
-
-  <div class="upload-button-wrapper">
-    <%= link_to '<button class="upload-video-button" type="button">Chop Your Video Up!!!</button>'.html_safe, edit_video_path(@video) %>
-  </div>
-
   <div>
     <% video_tag(url_for(@video.clip), style:'width:100%;height:auto', controls: '') %>
   </div>
@@ -120,11 +99,24 @@
   </video>
 </p>
 
-
-
-<div class="upload-button-wrapper">
-  <%= link_to '<button class="upload-video-button" type="button">Chop Your Video Up!!!</button>'.html_safe, edit_video_path(@video) %>
+<div class="view-ascii-button-div">
+  <button id="ascii-refresh" type="button" onClick="refreshPage()">View Ascii</button>
 </div>
+
+<!-- Display slideshow.mp4 -->
+<p>
+  <video
+  id="my-video"
+  class="video-js"
+  controls
+  preload="auto"
+  width="640"
+  height="264"
+  data-setup="{}"
+  >
+  <source src="<%= url_for("/assets/slideshow.mp4")%>" type="video/mp4" />
+  </video>
+</p>
 
 
 
