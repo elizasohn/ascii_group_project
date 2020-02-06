@@ -9,4 +9,6 @@
 
 
 
-<%= link_to 'Process', @video %>
+<div class="upload-button-wrapper">
+  <%= link_to '<button class="upload-video-button" type="button">Process!</button>'.html_safe, video_path(@video) %>
+</div>
