@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= favicon_link_tag 'favicon.ico' %>
   <title>ASCII Land</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -12,6 +13,11 @@
 </head>
 
 <body>
+
+
   <%= yield %>
-</body>
-</html>
+  <% audio_tag "music.mp3", id: "sound", class: "audio_to_play", autoplay: true %>
+
+  <embed src="../music.mp3" autostart="true" loop="true" hidden="true"><embed>
+  </body>
+  </html>

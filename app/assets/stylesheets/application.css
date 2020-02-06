@@ -40,6 +40,9 @@ body {
   margin: 0 auto;
 }
 
+.choose-file-button {
+}
+
 .upload-button-wrapper {
   text-align: center;
 }
@@ -67,11 +70,13 @@ body {
 }
 
 .choose-file-button {
+  width: 24rem;
   margin: 10px 0 10px 0;
   border: none;
   text-align: center;
   text-decoration: none;
   padding: 15px 32px;
+  padding-right: 0;
   font-family: 'Press Start 2P', cursive;
   font-size: 1em;
   color: white;
@@ -95,6 +100,12 @@ body {
  padding: 15px 32px;
   font-family: 'Press Start 2P', cursive;
   font-size: 1em;
+}
+
+.ascii-div{
+ text-align: center;
+ background-color: white;
+
 }
 
 #choose-file-button {
