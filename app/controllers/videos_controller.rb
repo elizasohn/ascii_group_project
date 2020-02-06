@@ -24,8 +24,9 @@ class VideosController < ApplicationController
   # GET /videos/1/edit
   def edit
     @url = url_for(@video.clip)
-    # routes to URL parameter at Video.rb #extract_frames
     @video.extract_frames(@url)
+    @video.extract_ascii(@url)
+    # routes to URL parameter at Video.rb #extract_frames
   end
 
   # POST /videos

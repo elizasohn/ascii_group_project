@@ -18,6 +18,15 @@
   <!-- <script src="https://raw.githubusercontent.com/victorqribeiro/imgToAscii/v1.3/src/imgToAscii.js"></script> -->
 	<!-- <script src="../assets/javascripts/imgToAscii.js"></script> -->
 
+<br>
+<button id="ascii-refresh" type="button" onClick="refreshPage()">View Ascii</button>
+
+<script>
+function refreshPage(){
+    window.location.reload();
+}
+</script>
+
   <div id="frames">
     <script>
       let one = new imgToAscii('/assets/frame_1.jpg', .1);
@@ -66,21 +75,6 @@
       fifteen.display(15);
     </script>
   </div>
-
-<!-- Display slideshow.mp4 -->
-<p>
-  <video
-  id="my-video"
-  class="video-js"
-  controls
-  preload="auto"
-  width="640"
-  height="264"
-  data-setup="{}"
-  >
-  <source src="<%= url_for("/assets/slideshow.mp4")%>" type="video/mp4" />
-  </video>
-</p>
 
 <!-- Display slideshow.mp4 -->
 <p>
