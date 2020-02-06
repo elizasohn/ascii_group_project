@@ -6,7 +6,7 @@ Ascii Land is a...
 
 ![screenshot of landing page for website](app/assets/readme/landing-page.png)
 
-### Setup/Installation Requirements
+## Setup/Installation Requirements
 
 ![image of Github repository file system](https://i.imgur.com/UStodOA.jpg "read")
 
@@ -34,36 +34,7 @@ brew install imagemagick@6
 ##### Windows OS Installation
 
 To install ImageMagick on Windows OS, use the [offical link](https://www.imagemagick.org/script/download.php#windows) on ImageMagick's website. Navigate to version `ImageMagick 6.9.6-0 Q16 x64 2016-10-02`.  
-**The most crucial steps during installation of ImageMagick on Windows is two check the following two options:** 
-1. **Add application directory to your system path** – otherwise Windows won’t recognize any of the commands and tell you something like ‘convert’ is not recognized as an internal or external command, operable program or batch file.
-
-2. **Install legacy utilities** – the new version of ImageMagick got rid of the old convert and mogrify commands in favour of a single command. Checking this box will allow you to still use the old convert and mogrify commands.
-
-![installing ImageMagick on Windows](app/assets/readme/image-magick-windows.png)
-
- 1. With your tools installed, and within the folder, run `bundle install` . Make sure all gems install correctly before moving on.
- 2. Next run `rake db:create` , `rake db:migrate` , and `rake db:test:prepare` . Make sure all processes complete successfully.
- 3. Finally, run `rails s` or `rails server` and navigate to `localhost:3000` to use **Ascii Land**.
- - - -
-
-### Clone:
-
- 1. To clone the repository, from your terminal or command line enter: "git clone https://github.com/eliza85/ascii_group_project.git"
- 2. Once the repository finishes downloading you will need to navigate to it in the terminal/command line.
- 3. Make sure your system has `Ruby 2.6.5`, `Rails 5.2.4.1` or higher, and `NPM` installed.
-
-##### Mac OS Installation
-
-On OS X with Homebrew, install ImageMagick:
-
-```sh
-brew install imagemagick@6
-```
-
-##### Windows OS Installation
-
-To install ImageMagick on Windows OS, use the [offical link](https://www.imagemagick.org/script/download.php#windows) on ImageMagick's website. Navigate to version `ImageMagick 6.9.6-0 Q16 x64 2016-10-02`.  
-**The most crucial steps during installation of ImageMagick on Windows is two check the following two options:** 
+**The most crucial steps during installation of ImageMagick on Windows is to check the following two options:** 
 1. **Add application directory to your system path** – otherwise Windows won’t recognize any of the commands and tell you something like ‘convert’ is not recognized as an internal or external command, operable program or batch file.
 
 2. **Install legacy utilities** – the new version of ImageMagick got rid of the old convert and mogrify commands in favour of a single command. Checking this box will allow you to still use the old convert and mogrify commands.
@@ -76,7 +47,7 @@ To install ImageMagick on Windows OS, use the [offical link](https://www.imagema
 
 - - -
 
-## Specifications:
+## Specifications
 
 - - -
 
