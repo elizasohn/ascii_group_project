@@ -15,17 +15,66 @@
 
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
-  <!-- <script src="https://raw.githubusercontent.com/victorqribeiro/imgToAscii/v1.3/src/imgToAscii.js"></script> -->
-	<!-- <script src="../assets/javascripts/imgToAscii.js"></script> -->
+<!-- <script src="https://raw.githubusercontent.com/victorqribeiro/imgToAscii/v1.3/src/imgToAscii.js"></script> -->
+<!-- <script src="../assets/javascripts/imgToAscii.js"></script> -->
 
-<div class="ascii-div">
-
+<div id="frames">
   <script>
-    let ele = new imgToAscii('/assets/frame_1.jpg', .1);
-    ele.display();
+    let one = new imgToAscii('/assets/ascii_frame_1.jpg', .1);
+    one.display(1);
+
+    let two = new imgToAscii('/assets/ascii_frame_2.jpg', .1);
+    two.display(2);
+
+    let three = new imgToAscii('/assets/ascii_frame_3.jpg', .1);
+    three.display(3);
+
+    let four = new imgToAscii('/assets/ascii_frame_4.jpg', .1);
+    four.display(4);
+
+    let five = new imgToAscii('/assets/ascii_frame_5.jpg', .1);
+    five.display(5);
+
+    let six = new imgToAscii('/assets/ascii_frame_6.jpg', .1);
+    six.display(6);
+
+    let seven = new imgToAscii('/assets/ascii_frame_7.jpg', .1);
+    seven.display(7);
+
+    let eight = new imgToAscii('/assets/ascii_frame_8.jpg', .1);
+    eight.display(8);
+
+    let nine = new imgToAscii('/assets/ascii_frame_9.jpg', .1);
+    nine.display(9);
+
+    let ten = new imgToAscii('/assets/ascii_frame_10.jpg', .1);
+    ten.display(10);
+
+    let eleven = new imgToAscii('/assets/ascii_frame_11.jpg', .1);
+    eleven.display(11);
+
+    let twelve = new imgToAscii('/assets/ascii_frame_12.jpg', .1);
+    twelve.display(12);
+
+    let thirteen = new imgToAscii('/assets/ascii_frame_13.jpg', .1);
+    thirteen.display(13);
+
+    let fourteen = new imgToAscii('/assets/ascii_frame_14.jpg', .1);
+    fourteen.display(14);
+
+    let fifteen = new imgToAscii('/assets/ascii_frame_15.jpg', .1);
+    fifteen.display(15);
   </script>
 </div>
 
+<br>
+<button id="ascii-refresh" type="button" onClick="refreshPage()">View Ascii</button>
+
+<script>
+  function refreshPage(){
+    window.location.reload();
+  }
+</script>
 
 <!-- Display slideshow.mp4 -->
 <p>
@@ -62,9 +111,9 @@
 
 
 
-  <div class="upload-button-wrapper">
-    <%= link_to '<button class="upload-video-button" type="button">Chop Your Video Up!!!</button>'.html_safe, edit_video_path(@video) %>
-  </div>
+<div class="upload-button-wrapper">
+  <%= link_to '<button class="upload-video-button" type="button">Chop Your Video Up!!!</button>'.html_safe, edit_video_path(@video) %>
+</div>
 
 
 

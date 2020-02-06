@@ -28,7 +28,7 @@ body {
   opacity: 0.96;
 }
 
-h3, h2{
+h3, h2 {
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -80,7 +80,7 @@ h3, h2{
   border: 2px solid #42413c;
 }
 
-.choose-file-button {
+.choose-file-button, #ascii-refresh {
   width: 24rem;
   margin: 10px 0 10px 0;
   border: none;
@@ -171,3 +171,13 @@ h3, h2{
       position: absolute;
       top: -999em;
       {
+
+.choose-file-button:hover {
+  color: #d1132c;
+}
+
+pre {
+  padding: 8px;
+  background-color: white;
+  border-radius: 8px;
+}

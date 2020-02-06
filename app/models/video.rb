@@ -2,7 +2,6 @@ class Video < ApplicationRecord
   has_one_attached :clip
   validate :image_attached
 
-
   def extract_frames url
     File.delete("app/assets/images/slideshow.mp4") if File.exist?("app/assets/images/slideshow.mp4")
     puts "made it to extract_frames"
@@ -30,10 +29,8 @@ class Video < ApplicationRecord
       1.times {
         frames << img.implode(implosion)
         legend.annotate(frames, 0,0,10,20, sprintf("% 4.2f", implosion))
-        # frames.matte = false
-        implosion -= 2.5
+        implosion -= 4
       }
-
       frames.write("app/assets/images/frame_#{frame_num}.jpg")
       frame_num = frame_num + 1
     }
@@ -52,7 +49,25 @@ class Video < ApplicationRecord
 
     file_deletion_count = directory_count - 1
     file_deletion_count.times {
-      File.delete("app/assets/images/frame_#{file_deletion_count}.jpg") if File.exist?("app/assets/images/frame_#{file_deletion_count}.jpg")}
+      if File.exist?("app/assets/images/frame_#{file_deletion_count}.jpg")
+        puts "frame_#{file_deletion_count}.jpg exists and was removed"
+        File.delete("app/assets/images/frame_#{file_deletion_count}.jpg")
+        file_deletion_count = file_deletion_count - 1
+      else
+        puts "No file"
+      end
+    }
+  end
+
+  def extract_ascii url
+    movie = FFMPEG::Movie.new(url)
+    duration = movie.duration
+    frame_captures = (duration * 6).floor
+    movie.screenshot(
+      "app/assets/ascii_frames/ascii_frame_%d.jpg",
+      { vframes: frame_captures, frame_rate: duration },
+      validate: false
+    )
   end
 
   private
