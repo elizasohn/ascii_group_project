@@ -19,11 +19,39 @@
 	<!-- <script src="../assets/javascripts/imgToAscii.js"></script> -->
 
     <script>
-      let ele = new imgToAscii('/assets/frame_1.jpg', .1);
-      ele.display();
+      const frames = [
+        new imgToAscii('/assets/frame_1.jpg', .1),
+        new imgToAscii('/assets/frame_2.jpg', .1),
+        new imgToAscii('/assets/frame_3.jpg', .1),
+        new imgToAscii('/assets/frame_4.jpg', .1),
+        new imgToAscii('/assets/frame_5.jpg', .1),
+        new imgToAscii('/assets/frame_6.jpg', .1),
+        new imgToAscii('/assets/frame_7.jpg', .1),
+        new imgToAscii('/assets/frame_8.jpg', .1),
+    ]
+
+      for (let i = 0; i <= frames.length; i++) {   
+        # setTimeout( function timer(){
+
+          # test 1 try and use old structure for the loop and destroy pre element at end of interval
+          # let ele = frames[i]
+          # ele.display()
+
+          # test 2 try and use new structure to create div ele, set id, then destroy id after interval
+        # let divelement = document.createElement('div');
+        # divelement.setAttribute("id", "toto1");
+        # let ele = new imgToAscii('/assets/frame_1.jpg', .1);
+        # divelement.appendChild();
+        ele.display()
+
+        # set interval in here to wait and display image x seconds
+        # }, 300 );
+        # destroy element here
+        # element.remove();
+    }
     </script>
 
-	<div> Some text </div>
+
 
 
 <!-- Display slideshow.mp4 -->
