@@ -1,57 +1,6 @@
 class Video < ApplicationRecord
   has_one_attached :clip
   validate :image_attached
-  # 
-  # def ascii_it(imagePath, asciiPath)
-  #   bytes = "\xdb\xb2\xb1\xb0 "
-  #
-  #   image = Magick::Image.read(imagePath).first
-  #   width = image.columns
-  #   height = image.rows
-  #   pixels = image.dispatch(0, 0, width, height, 'I', true)
-  #   output = ''
-  #   height.times do |y|
-  #     line = ''
-  #     width.times do |x|
-  #       pixel = pixels[x + y + width]
-  #       #invert
-  #       pixel = 1.0 - pixel
-  #       index = (pixel * (bytes.size - 1)).round
-  #       line += bytes[index]
-  #     end
-  #     line += "\r\n" if y < height - 1
-  #     output += line
-  #   end
-  #   Nil.writeFile(asciiPath, output)
-  # end
-  #
-  # if ARGV.size !=2
-  #   puts 'Usage:'
-  #   puts "ruby #(File.basename(__FILE__)) <image> <ASCII output>"
-  # end
-  #
-  # imagePath = ARGV[0]
-  # asciiPath = ARGV[1]
-
-  # convertImage(imagePath, asciiPath)
-
-
-
-  #   resource = open('app/assets/images/test.jpg')
-  #   image = Magick::ImageList.new
-  #   image.from_blob resource.read
-  #   image = image.scale(400 / image.columns.to_f)
-  #   image = image.scale(image.columns, image.rows / 6)
-  #   cur_row = 0
-  #   image.each_pixel do |pixel, col, row|
-  #     color = pixel.to_color(Magick::AllCompliance, false, 8)
-  #     if cur_row != row
-  #
-  #       cur_row = row
-  #     end
-  #     print Paint[' ', '', color]
-  #   end
-  # end
 
   def extract_frames url
     puts "made it to extract_frames"
@@ -62,24 +11,65 @@ class Video < ApplicationRecord
     puts movie.height
     # movie.screenshot("screenshot.bmp", seek_time: 5, resolution: '320x240')
     movie.screenshot("app/assets/images/frame_%d.jpg", { vframes: 10, frame_rate: '1/2' }, validate: false)
+
+  def extract_frames url
+    File.delete("app/assets/images/slideshow.mp4") if File.exist?("app/assets/images/slideshow.mp4")
+    puts "made it to extract_frames"
+    movie = FFMPEG::Movie.new(url)
+    puts "made it past movie declaration"
+    duration = movie.duration
+    frame_captures = (duration * 6).floor
+    movie.screenshot(
+      "app/assets/images/frame_%d.jpg",
+      { vframes: frame_captures, frame_rate: duration },
+      validate: false
+    )
+
+    frame_num = 1;
+    frame_captures.times {
+      img = Magick::Image.read("app/assets/images/frame_#{frame_num}.jpg").first
+      legend = Magick::Draw.new
+      legend.stroke = 'transparent'
+      legend.fill = 'white'
+      legend.gravity = Magick::SouthGravity
+
+      frames = Magick::ImageList.new
+
+      implosion = 0.5
+      1.times {
+        frames << img.implode(implosion)
+        legend.annotate(frames, 0,0,10,20, sprintf("% 4.2f", implosion))
+        # frames.matte = false
+        implosion -= 2.5
+      }
+
+      frames.write("app/assets/images/frame_#{frame_num}.jpg")
+      frame_num = frame_num + 1
+    }
+
+    slideshow_transcoder = FFMPEG::Transcoder.new(
+      '',
+      'app/assets/images/slideshow.mp4', # output
+      { resolution: "640x480" },
+      input: "app/assets/images/frame_%d.jpg",
+      input_options: { framerate: '20' }
+    )
+    slideshow = slideshow_transcoder.run
+
+    dir = 'app/assets/images'
+    directory_count = Dir[File.join(dir, '**', '*')].count { |file| File.file?(file) }
+
+    file_deletion_count = directory_count - 1
+    file_deletion_count.times {
+      File.delete("app/assets/images/frame_#{file_deletion_count}.jpg") if File.exist?("app/assets/images/frame_#{file_deletion_count}.jpg")}
   end
 
   private
 
   def image_attached
-    # if clip.attached? && !clip.content_type.in?(%w(video/mov video/mp4 video/avi))
-    #
-    #   errors.add(:clip, "Your movie must be an MOV, MP4 or an AVI, kind person.")
-    # elsif
     if
       self.clip.attached? == false
       errors.add(:clip, 'Must have a video attached.')
     end
   end
-
-  # def image_attached
-  #   if clip.attached? == false
-  #     errors.add(:clip, 'Please attach a video, friend.')
-  #   end
-  # end
 end
