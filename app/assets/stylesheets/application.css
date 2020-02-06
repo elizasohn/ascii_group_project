@@ -14,135 +14,132 @@
 *= require_self
 */
 
-
-/* body{
-background-color: lightgray;
+/* *{
+  font-family: 'Press Start 2P', cursive;
+  opacity: 0.96;
 } */
-.whole-wrapper{
+
+body {
+  background-image: url('splash2.gif');
+  background-size: cover;
+  font-family: 'Press Start 2P', cursive;
+  opacity: 0.96;
+}
+
+.whole-wrapper {
   margin-top: 50px;
 }
-.new-wrapper{
+
+.new-wrapper {
   padding-top: 20px;
   text-align: center;
   background-color: white;
   margin-top: 0;
   border: 2px solid #42413c;
   width: 50%;
-margin: 0 auto;
+  margin: 0 auto;
 }
 
-.upload-button-wrapper{
+.upload-button-wrapper {
   text-align: center;
 }
+
 .upload-video-button:hover {
   /* background-color: #780b0b; */
   background-image: url('splash2.gif');
 }
+
 .upload-video-button:hover {
   color: #d1132c;
 }
 
-.upload-video-button{
+.upload-video-button {
   margin: 40px 0 40px 0;
-border: none;
-text-align: center;
-text-decoration: none;
- padding: 15px 32px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 32px;
   font-family: 'Press Start 2P', cursive;
-font-size: 1em;
-color: white;
-/* background-color: black; */
+  font-size: 1em;
+  color: white;
   background-image: url('splash2.gif');
     border: 2px solid #42413c;
 }
 
-.choose-file-button{
+.choose-file-button {
   margin: 10px 0 10px 0;
-border: none;
-text-align: center;
-text-decoration: none;
- padding: 15px 32px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 32px;
   font-family: 'Press Start 2P', cursive;
-font-size: 1em;
-color: white;
+  font-size: 1em;
+  color: white;
   background-image: url('splash2.gif');
     border: 2px solid #42413c;
 }
 
+/* .choose-file-button:hover {
+  background-image: url('button-background.png');
+} */
 
-.choose-file-button:hover {
-/* background-image: url('button-background.png'); */
-}
 .choose-file-button:hover {
   color: #d1132c;
 }
-#warp-button{
+
+#warp-button {
   margin: 40px 0 40px 0;
-border: none;
-text-align: center;
-text-decoration: none;
+  border: none;
+  text-align: center;
+  text-decoration: none;
  padding: 15px 32px;
   font-family: 'Press Start 2P', cursive;
-font-size: 1em;
+  font-size: 1em;
 }
 
-#choose-file-button{
+#choose-file-button {
   margin: 40px 0 40px 0;
-border: none;
-text-align: center;
-text-decoration: none;
- padding: 15px 32px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 32px;
   font-family: 'Press Start 2P', cursive;
-font-size: 1em;
+  font-size: 1em;
 }
 
-.video-js{
+.video-js {
   text-align: center;
   display: block;
   margin: 0 auto;
   margin-top: 150px;
 }
 
-.crud-links{
+.crud-links {
   text-align: center;
 }
 
-*{
-  font-family: 'Press Start 2P', cursive;
-  opacity: 0.96;
+.header-text {
+  margin-top: 0;
 }
 
-.header-text{
-  margin-top: 0; */
-/* color: #ad5858
-}
-
-.subheader-text{
-/* color: #ad5858 */
-}
-
-body {
-  background-image: url('splash2.gif');
-  background-size: cover;
-}
-
-/* body{
-  background-image: url('background.png');
-
+/* .subheader-text{
+  color: #ad5858
 } */
 
-
-.man-head{
+.man-head {
   width: 20rem;
 }
 
-hr{
+hr {
   border-top: 2px solid #42413c;
 }
 
-.small-pic-div{
-    border: 2px solid #42413c;
+.small-pic-div {
+  border: 2px solid #42413c;
 }
 
 pre {
+  padding: 8px;
+  background-color: white;
+  border-radius: 8px;
 }
