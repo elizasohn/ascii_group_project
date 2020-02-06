@@ -1,7 +1,9 @@
 <div class="new-wrapper">
+  <h3 class="header-text">Welcome to </h3>
+  <%= image_tag ( "asciiland.png"), :class => "asciiland" %>
   <div class="header">
-    <h1>Welcome to ASCII LAND</h1>
-    <h2>Transform your videos into ascii art</h2>
+    <h2 class="subheader-text">Transform your videos into ascii art</h2>
+    <h5>With new video warping capabilities!</h5>
   </div>
   <div class="upload-button-wrapper">
 
@@ -68,7 +70,10 @@
 </div>
 
 <br>
-<button id="ascii-refresh" type="button" onClick="refreshPage()">View Ascii</button>
+<div class="view-ascii-button-div">
+  <button id="ascii-refresh" type="button" onClick="refreshPage()">View Ascii</button>
+
+</div>
 
 <script>
   function refreshPage(){
@@ -92,6 +97,12 @@
 </p>
 
 <p>
+
+
+  <div class="upload-button-wrapper">
+    <%= link_to '<button class="upload-video-button" type="button">Chop Your Video Up!!!</button>'.html_safe, edit_video_path(@video) %>
+  </div>
+
   <div>
     <% video_tag(url_for(@video.clip), style:'width:100%;height:auto', controls: '') %>
   </div>
