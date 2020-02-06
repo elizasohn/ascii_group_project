@@ -67,8 +67,10 @@ class imgToAscii {
 		}).catch( e => console.error(e) );
 	}
 
-	async display(){
+	async display(num){
 		let pre = document.createElement('pre');
+		let newID = "frame" + num
+		pre.setAttribute("id", newID);
 		pre.style.fontFamily = "Courier, monospace";
 		pre.style.lineHeight = "6px";
 		pre.style.fontSize = "11px";
@@ -89,5 +91,5 @@ class imgToAscii {
 		await this.loadImage;
 		pre.innerHTML = this.stringColor;
 	}
-      // let ele = new imgToAscii('/assets/frame_1.jpg', .1);
+
 }
