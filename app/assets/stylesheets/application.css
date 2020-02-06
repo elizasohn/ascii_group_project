@@ -1,3 +1,4 @@
+
 /*
 * This is a manifest file that'll be compiled into application.css, which will include all the files
 * listed below.
@@ -15,15 +16,25 @@
 */
 
 /* *{
-  font-family: 'Press Start 2P', cursive;
-  opacity: 0.96;
+font-family: 'Press Start 2P', cursive;
+opacity: 0.96;
 } */
+
 
 body {
   background-image: url('splash2.gif');
   background-size: cover;
   font-family: 'Press Start 2P', cursive;
   opacity: 0.96;
+}
+
+h3, h2 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.view-ascii-button-div{
+  text-align: center;
 }
 
 .whole-wrapper {
@@ -47,6 +58,11 @@ body {
   text-align: center;
 }
 
+.asciiland{
+  width: 90%
+
+}
+
 .upload-video-button:hover {
   /* background-color: #780b0b; */
   background-image: url('splash2.gif');
@@ -66,10 +82,10 @@ body {
   font-size: 1em;
   color: white;
   background-image: url('splash2.gif');
-    border: 2px solid #42413c;
+  border: 2px solid #42413c;
 }
 
-.choose-file-button {
+.choose-file-button, #ascii-refresh {
   width: 24rem;
   margin: 10px 0 10px 0;
   border: none;
@@ -81,77 +97,92 @@ body {
   font-size: 1em;
   color: white;
   background-image: url('splash2.gif');
-    border: 2px solid #42413c;
+  border: 2px solid #42413c;
 }
 
 /* .choose-file-button:hover {
   background-image: url('button-background.png');
-} */
+  } */
+
+  .choose-file-button:hover {
+    color: #d1132c;
+  }
+
+  #warp-button {
+    margin: 40px 0 40px 0;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 32px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+  }
+
+  .ascii-div{
+    text-align: center;
+    background-color: white;
+
+  }
+
+  #choose-file-button {
+    margin: 40px 0 40px 0;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 32px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+  }
+
+  .video-js {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 150px;
+  }
+
+  .crud-links {
+    text-align: center;
+  }
+
+  .header-text {
+    margin-top: 0;
+  }
+
+  /* .subheader-text{
+    color: #ad5858
+    } */
+
+    .man-head {
+      width: 20rem;
+    }
+
+    hr {
+      border-top: 2px solid #42413c;
+    }
+
+    .small-pic-div {
+      border: 2px solid #42413c;
+    }
+
+    pre {
+      padding: 8px;
+      background-color: white;
+      border-radius: 8px;
+      /* margin-left: 35%; */
+    }
+
+    .audio_player {
+      position: absolute;
+      top: -999em;
+      {
 
 .choose-file-button:hover {
   color: #d1132c;
-}
-
-#warp-button {
-  margin: 40px 0 40px 0;
-  border: none;
-  text-align: center;
-  text-decoration: none;
- padding: 15px 32px;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1em;
-}
-
-.ascii-div{
- text-align: center;
- background-color: white;
-
-}
-
-#choose-file-button {
-  margin: 40px 0 40px 0;
-  border: none;
-  text-align: center;
-  text-decoration: none;
-  padding: 15px 32px;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1em;
-}
-
-.video-js {
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  margin-top: 150px;
-}
-
-.crud-links {
-  text-align: center;
-}
-
-.header-text {
-  margin-top: 0;
-}
-
-/* .subheader-text{
-  color: #ad5858
-} */
-
-.man-head {
-  width: 20rem;
-}
-
-hr {
-  border-top: 2px solid #42413c;
-}
-
-.small-pic-div {
-  border: 2px solid #42413c;
 }
 
 pre {
   padding: 8px;
   background-color: white;
   border-radius: 8px;
-  /* margin-left: 35%; */
 }
