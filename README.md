@@ -27,13 +27,13 @@ On OS X with Homebrew, install ImageMagick:
 brew install imagemagick@6
 ```
  1. If any errors occur here. Refer to **Troubleshooting** below these instructions.
- 2. With your tools installed, and within the folder, run `bundle install` . Make sure all gems install correctly before moving on.
- 3. Next run `rake db:create` , `rake db:migrate` , and `rake db:test:prepare` . Make sure all processes complete successfully.
+ 2. With your tools installed, and within the folder, run `bundle install`. Make sure all gems install correctly before moving on.
+ 3. Next run `rake db:create`, `rake db:migrate`, and `rake db:test:prepare`. Make sure all processes complete successfully.
  4. Finally, run `rails s` or `rails server` and navigate to `localhost:3000` to use **Ascii Land**.
 
 ##### Windows OS Installation
 
-To install ImageMagick on Windows OS, use the [offical link](https://www.imagemagick.org/script/download.php#windows) on ImageMagick's website. Navigate to version `ImageMagick 6.9.6-0 Q16 x64 2016-10-02`.  
+To install ImageMagick on Windows OS, use the [official link](https://www.imagemagick.org/script/download.php#windows) on ImageMagick's website. Navigate to `ImageMagick 6.9.6-0 Q16 x64 2016-10-02`.  
 **The most crucial steps during installation of ImageMagick on Windows is to check the following two options:** 
 1. **Add application directory to your system path** – otherwise Windows won’t recognize any of the commands and tell you something like ‘convert’ is not recognized as an internal or external command, operable program or batch file.
 
@@ -41,8 +41,8 @@ To install ImageMagick on Windows OS, use the [offical link](https://www.imagema
 
 ![installing ImageMagick on Windows](app/assets/readme/image-magick-windows.png)
 
- 1. With your tools installed, and within the folder, run `bundle install` . Make sure all gems install correctly before moving on.
- 2. Next run `rake db:create` , `rake db:migrate` , and `rake db:test:prepare` . Make sure all processes complete successfully.
+ 1. With your tools installed, and within the folder, run `bundle install`. Make sure all gems install correctly before moving on.
+ 2. Next run `rake db:create`, `rake db:migrate`, and `rake db:test:prepare` . Make sure all processes complete successfully.
  3. Finally, run `rails s` or `rails server` and navigate to `localhost:3000` to use **Ascii Land**.
 
 - - -
