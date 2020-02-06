@@ -17,15 +17,14 @@
 
   <%= yield %>
 
-
   <script>
-    const bloop2 = new Audio('/wav/click2.wav');
-    $('.choose-file-button').on('click', function (e) {
-      e.preventDefault();
-      console.log(bloop2);
-      bloop2.play()
-    });
+    const soundtrack = new Audio('/wav/click1.wav');
+    soundtrack.autoplay = true;
+    soundtrack.load();
+
+
   </script>
 
-  </body>
-  </html>
+
+</body>
+</html>

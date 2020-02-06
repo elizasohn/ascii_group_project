@@ -1,6 +1,4 @@
 
-
-
 <% if video.errors.any? %>
 <h2 class="error">ERROR, ERROR, ERROR</h2>
 <h3 class="error">You have an error.</h3>
@@ -24,22 +22,12 @@
     </div>
   <% end %>
 
-
   <div class="field">
     <%= form.file_field :clip, class: 'choose-file-button' %>
   </div>
-  <script>
-    const bloop2 = new Audio('/wav/click2.wav');
-    $('.choose-file-button').on('click', function (e) {
-      e.preventDefault();
-      console.log(bloop2);
-      bloop2.play()
-    });
-  </script>
-
 
 <hr>
-<!-- below the hr on the bottom and above the end -->
+
   <div class="actions">
 
     <%= form.submit 'Upload Video', :class => 'upload-video-button' %>
@@ -48,19 +36,14 @@
 
 <script>
   const bloop = new Audio('/wav/click1.wav');
-  $('.upload-video-button').on('click', function (e) {
-    e.preventDefault();
-    console.log(bloop);
+  $('.upload-video-button').on('click') {
     bloop.play()
   });
 </script>
 
-
-  <!-- <script>
-    $('#to').click(function (e) {
-      e.preventDefault();
-      $('#to-hospital')[0].currentTime = 0;
-      $('#to-hospital')[0].play();
-      return true;
-    });
-  </script> -->
+<script>
+  const bloop2 = new Audio('/wav/click2.wav');
+  $('.choose-file-button').on('click') {
+    bloop2.play()
+  });
+</script>

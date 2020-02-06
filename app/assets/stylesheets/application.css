@@ -1,3 +1,4 @@
+
 /*
 * This is a manifest file that'll be compiled into application.css, which will include all the files
 * listed below.
@@ -19,6 +20,7 @@ font-family: 'Press Start 2P', cursive;
 opacity: 0.96;
 } */
 
+
 body {
   background-image: url('splash2.gif');
   background-size: cover;
@@ -26,6 +28,10 @@ body {
   opacity: 0.96;
 }
 
+h3, h2{
+  margin-bottom: 0;
+  margin-top: 0;
+}
 .whole-wrapper {
   margin-top: 50px;
 }
@@ -47,8 +53,8 @@ body {
   text-align: center;
 }
 
-.ascii-banner{
-  width: 50%
+.asciiland{
+  width: 90%
 
 }
 
