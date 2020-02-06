@@ -28,3 +28,4 @@
 
 # Ignore images
 /app/assets/images
+/app/assets/ascii_frames
