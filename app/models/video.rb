@@ -37,7 +37,7 @@ class Video < ApplicationRecord
       frames.write("app/assets/images/frame_#{frame_num}.jpg")
       frame_num = frame_num + 1
     }
-    
+
     slideshow_transcoder = FFMPEG::Transcoder.new(
       '',
       'app/assets/images/slideshow.mp4', # output
@@ -50,9 +50,9 @@ class Video < ApplicationRecord
     dir = 'app/assets/images'
     directory_count = Dir[File.join(dir, '**', '*')].count { |file| File.file?(file) }
 
-  #   file_deletion_count = directory_count - 1
-  #   file_deletion_count.times { File.delete("app/assets/images/frame_#{file_deletion_count}.jpg")
-  # binding.pry }
+    file_deletion_count = directory_count - 1
+    file_deletion_count.times {
+      File.delete("app/assets/images/frame_#{file_deletion_count}.jpg") if File.exist?("app/assets/images/frame_#{file_deletion_count}.jpg")}
   end
 
   private
