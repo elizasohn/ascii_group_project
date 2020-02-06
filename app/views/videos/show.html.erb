@@ -18,14 +18,69 @@
   <!-- <script src="https://raw.githubusercontent.com/victorqribeiro/imgToAscii/v1.3/src/imgToAscii.js"></script> -->
 	<!-- <script src="../assets/javascripts/imgToAscii.js"></script> -->
 
-<div class="ascii-div">
+  <div id="frames">
+    <script>
+      let one = new imgToAscii('/assets/frame_1.jpg', .1);
+      one.display(1);
 
-  <script>
-    let ele = new imgToAscii('/assets/frame_1.jpg', .1);
-    ele.display();
-  </script>
-</div>
+      let two = new imgToAscii('/assets/frame_2.jpg', .1);
+      two.display(2);
 
+      let three = new imgToAscii('/assets/frame_3.jpg', .1);
+      three.display(3);
+
+      let four = new imgToAscii('/assets/frame_4.jpg', .1);
+      four.display(4);
+
+      let five = new imgToAscii('/assets/frame_5.jpg', .1);
+      five.display(5);
+
+      let six = new imgToAscii('/assets/frame_6.jpg', .1);
+      six.display(6);
+
+      let seven = new imgToAscii('/assets/frame_7.jpg', .1);
+      seven.display(7);
+
+      let eight = new imgToAscii('/assets/frame_8.jpg', .1);
+      eight.display(8);
+
+      let nine = new imgToAscii('/assets/frame_9.jpg', .1);
+      nine.display(9);
+
+      let ten = new imgToAscii('/assets/frame_10.jpg', .1);
+      ten.display(10);
+
+      let eleven = new imgToAscii('/assets/frame_11.jpg', .1);
+      eleven.display(11);
+
+      let twelve = new imgToAscii('/assets/frame_12.jpg', .1);
+      twelve.display(12);
+
+      let thirteen = new imgToAscii('/assets/frame_13.jpg', .1);
+      thirteen.display(13);
+
+      let fourteen = new imgToAscii('/assets/frame_14.jpg', .1);
+      fourteen.display(14);
+
+      let fifteen = new imgToAscii('/assets/frame_15.jpg', .1);
+      fifteen.display(15);
+    </script>
+  </div>
+
+<!-- Display slideshow.mp4 -->
+<p>
+  <video
+  id="my-video"
+  class="video-js"
+  controls
+  preload="auto"
+  width="640"
+  height="264"
+  data-setup="{}"
+  >
+  <source src="<%= url_for("/assets/slideshow.mp4")%>" type="video/mp4" />
+  </video>
+</p>
 
 <!-- Display slideshow.mp4 -->
 <p>
