@@ -38,8 +38,10 @@ class Video < ApplicationRecord
     #   frame_num = frame_num + 1
     # }
     dir = 'app/assets/images'
-    Dir[File.join(dir, '**', '*')].count { |file| File.file?(file) }
-    
+    directory_count = Dir[File.join(dir, '**', '*')].count { |file| File.file?(file) }
+
+    # 1.times { File.delete("app/assets/images/frame_%djpg") }
+
     slideshow_transcoder = FFMPEG::Transcoder.new(
       '',
       'app/assets/images/slideshow.mp4', # output
@@ -53,10 +55,6 @@ class Video < ApplicationRecord
   private
 
   def image_attached
-    # if clip.attached? && !clip.content_type.in?(%w(video/mov video/mp4 video/avi))
-    #
-    #   errors.add(:clip, "Your movie must be an MOV, MP4 or an AVI, kind person.")
-    # elsif
     if
       self.clip.attached? == false
       errors.add(:clip, 'Must have a video attached.')
