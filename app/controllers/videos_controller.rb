@@ -25,20 +25,6 @@ class VideosController < ApplicationController
   def edit
     @url = url_for(@video.clip)
     @frames = @video.extract_frames(@url)
-
-    # dir = 'app/assets/images'
-    # directory_count = Dir[File.join(dir, '**', '*')].count { |file| File.file?(file) }
-    #
-    # file_deletion_count = directory_count - 1
-    # file_deletion_count.times {
-    #   if File.exist?("app/assets/images/frame_#{file_deletion_count}.jpg")
-    #     puts "frame_#{file_deletion_count}.jpg exists and was removed"
-    #     File.delete("app/assets/images/frame_#{file_deletion_count}.jpg")
-    #     file_deletion_count = file_deletion_count - 1
-    #   else
-    #     puts "No file"
-    #   end
-    # }
     # routes to URL parameter at Video.rb #extract_frames
   end
 
