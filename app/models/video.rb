@@ -16,28 +16,30 @@ class Video < ApplicationRecord
       validate: false
     )
 
-    frame_num = 1;
-    frame_captures.times {
-      img = Magick::Image.read("app/assets/images/frame_#{frame_num}.jpg").first
-      legend = Magick::Draw.new
-      legend.stroke = 'transparent'
-      legend.fill = 'white'
-      legend.gravity = Magick::SouthGravity
+    # frame_num = 1;
+    # frame_captures.times {
+    #   img = Magick::Image.read("app/assets/images/frame_#{frame_num}.jpg").first
+    #   legend = Magick::Draw.new
+    #   legend.stroke = 'transparent'
+    #   legend.fill = 'white'
+    #   legend.gravity = Magick::SouthGravity
 
-      frames = Magick::ImageList.new
+    #   frames = Magick::ImageList.new
 
-      implosion = 0.5
-      1.times {
-        frames << img.implode(implosion)
-        legend.annotate(frames, 0,0,10,20, sprintf("% 4.2f", implosion))
-        # frames.matte = false
-        implosion -= 2.5
-      }
+    #   implosion = 0.5
+    #   1.times {
+    #     frames << img.implode(implosion)
+    #     legend.annotate(frames, 0,0,10,20, sprintf("% 4.2f", implosion))
+    #     # frames.matte = false
+    #     implosion -= 2.5
+    #   }
 
-      frames.write("app/assets/images/frame_#{frame_num}.jpg")
-      frame_num = frame_num + 1
-    }
-
+    #   frames.write("app/assets/images/frame_#{frame_num}.jpg")
+    #   frame_num = frame_num + 1
+    # }
+    dir = 'app/assets/images'
+    Dir[File.join(dir, '**', '*')].count { |file| File.file?(file) }
+    
     slideshow_transcoder = FFMPEG::Transcoder.new(
       '',
       'app/assets/images/slideshow.mp4', # output
