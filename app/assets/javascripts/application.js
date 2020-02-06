@@ -14,9 +14,29 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
 
 
-$(".upload-video-button").on("click", function() {
-  $(".audio-play")[0].currentTime = 0;
-  return $(".audio-play")[0].play();
-});
+//
+// $(".upload-video-button").on("click", function() {
+//   $(".audio-play")[0].currentTime = 0;
+//   return $(".audio-play")[0].play();
+// });
+
+
+// $('#playsound').on('click', function (e) {
+//   e.preventDefault();
+//   console.log("hi")
+//   $('#sound_effect').currentTime = 0;
+//   $('#sound_effect').play();
+//   return false;
+// });
+
+
+// $('#playsound').on('click', function (e) {
+//   e.preventDefault();
+//   bloop.play()
+//   $('#sound_effect').currentTime = 0;
+//   $('#sound_effect').play();
+//   return false;
+// });

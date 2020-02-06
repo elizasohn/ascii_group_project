@@ -16,8 +16,16 @@
 
 
   <%= yield %>
-  <% audio_tag "music.mp3", id: "sound", class: "audio_to_play", autoplay: true %>
 
-  <embed src="../music.mp3" autostart="true" loop="true" hidden="true"><embed>
+
+  <script>
+    const bloop2 = new Audio('/wav/click2.wav');
+    $('.choose-file-button').on('click', function (e) {
+      e.preventDefault();
+      console.log(bloop2);
+      bloop2.play()
+    });
+  </script>
+
   </body>
   </html>

@@ -2,9 +2,11 @@
 
 
   <div class="new-wrapper">
+    <%= image_tag ( "ascii-banner.png"), :class => "ascii-banner" %>
     <div class="header">
       <h1 class="header-text">Welcome to ASCII LAND</h1>
       <h2 class="subheader-text">Transform your videos into ascii art</h2>
+      <h5>With new video warping capabilities!</h5>
     </div>
 
 
@@ -12,6 +14,8 @@
     <div class="upload-button-wrapper">
       <%= render 'form', video: @video %>
     </div>
+
+    
 
 
     </div>
