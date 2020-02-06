@@ -31,12 +31,15 @@ background-color: lightgray;
 margin: 0 auto;
 }
 
+.upload-button-wrapper{
+  text-align: center;
+}
 .upload-video-button:hover {
   /* background-color: #780b0b; */
   background-image: url('splash2.gif');
 }
 .upload-video-button:hover {
-  color: black;
+  color: #d1132c;
 }
 
 .upload-video-button{
@@ -71,7 +74,7 @@ color: white;
 /* background-image: url('button-background.png'); */
 }
 .choose-file-button:hover {
-  color: black;
+  color: #d1132c;
 }
 #warp-button{
   margin: 40px 0 40px 0;
@@ -106,6 +109,7 @@ font-size: 1em;
 
 *{
   font-family: 'Press Start 2P', cursive;
+  opacity: 0.96;
 }
 
 .header-text{
