@@ -15,11 +15,6 @@ class Video < ApplicationRecord
       { vframes: frame_captures, frame_rate: duration },
       validate: false
     )
-    movie.screenshot(
-      "app/assets/ascii_frames/ascii_frame_%d.jpg",
-      { vframes: frame_captures, frame_rate: duration },
-      validate: false
-    )
 
     frame_num = 1;
     frame_captures.times {
@@ -37,7 +32,6 @@ class Video < ApplicationRecord
         legend.annotate(frames, 0,0,10,20, sprintf("% 4.2f", implosion))
         implosion -= 4
       }
-
       frames.write("app/assets/images/frame_#{frame_num}.jpg")
       frame_num = frame_num + 1
     }
@@ -64,6 +58,17 @@ class Video < ApplicationRecord
         puts "No file"
       end
     }
+  end
+
+  def extract_ascii url
+    movie = FFMPEG::Movie.new(url)
+    duration = movie.duration
+    frame_captures = (duration * 6).floor
+    movie.screenshot(
+      "app/assets/ascii_frames/ascii_frame_%d.jpg",
+      { vframes: frame_captures, frame_rate: duration },
+      validate: false
+    )
   end
 
   private
