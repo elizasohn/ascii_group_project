@@ -16,8 +16,15 @@
 
 
   <%= yield %>
-  <% audio_tag "music.mp3", id: "sound", class: "audio_to_play", autoplay: true %>
 
-  <embed src="../music.mp3" autostart="true" loop="true" hidden="true"><embed>
-  </body>
-  </html>
+  <script>
+    const soundtrack = new Audio('/wav/click1.wav');
+    soundtrack.autoplay = true;
+    soundtrack.load();
+
+
+  </script>
+
+
+</body>
+</html>
