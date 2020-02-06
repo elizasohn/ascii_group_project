@@ -17,12 +17,109 @@
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
 
-<body>
+
   <!-- <script src="https://raw.githubusercontent.com/victorqribeiro/imgToAscii/v1.3/src/imgToAscii.js"></script> -->
 	<!-- <script src="../assets/javascripts/imgToAscii.js"></script> -->
 	<script>
-		let ele = new imgToAscii('/assets/test.jpg', .15);
-		ele.display();
+    // let first = document.getElementById('one');
+    // setTimeout(() => {
+    //   first.style.display = 'none';
+    //   second.style.display = 'block';
+    //   setTimeout(() => {
+    //
+    //     setTimeout(() => {
+    //
+    //     }, 500)
+    //   }, 500)
+    // }, 500)
+    //
+    //
+    // function divAndTimeout(i) {
+    //   if (i <= 1) {
+    //
+    //   } else {
+    //     setTimeout(() => {
+    //
+    //       let thing = new imgToAscii('/assets/frame_' + i + '.jpg', .15);
+    //       thing.display;
+    //       divAndTimeout(i-1);
+    //     })
+    //   }
+    // }
+
+		let one = new imgToAscii('/assets/frame_1.jpg', .15);
+    let two = new imgToAscii('/assets/frame_2.jpg', .15);
+    let three = new imgToAscii('/assets/frame_3jpg', .15);
+    let four = new imgToAscii('/assets/frame_4.jpg', .15);
+    let five = new imgToAscii('/assets/frame_5.jpg', .15);
+    let six = new imgToAscii('/assets/frame_6.jpg', .15);
+    let seven = new imgToAscii('/assets/frame_7.jpg', .15);
+    let eight = new imgToAscii('/assets/frame_8.jpg', .15);
+    let nine  = new imgToAscii('/assets/frame_9.jpg', .15);
+    let ten = new imgToAscii('/assets/frame_10.jpg', .15);
+    let eleven = new imgToAscii('/assets/frame_11.jpg', .15);
+    let twelve = new imgToAscii('/assets/frame_12.jpg', .15);
+    let thirteen = new imgToAscii('/assets/frame_13.jpg', .15);
+    let fourteen = new imgToAscii('/assets/frame_14.jpg', .15);
+    let fifteen = new imgToAscii('/assets/frame_15.jpg', .15);
+
+  <div id="1">
+		one.display();
+  </div>
+  <div id="2">
+    two.display();
+  </div>
+  <div id="3">
+    three.display();
+  </div>
+  <div id="4">
+    four.display();
+  </div>
+  <div id="5">
+    five.display();
+  </div>
+  <div id="6">
+    six.display();
+  </div>
+  <div id="7">
+    seven.display();
+  </div>
+  <div id="8">
+    eight.display();
+  </div>
+  <div id="9">
+    nine.display();
+  </div>
+  <div id="10">
+    ten.display();
+  </div>
+  <div id="11">
+    eleven.display();
+  </div>
+  <div id="12">
+    twelve.display();
+  </div>
+  <div id="13">
+    thirteen.display();
+  </div>
+  <div id="14">
+    fourteen.display();
+  </div>
+  <div id="15">
+    fifteen.display();
+  </div>
+
+
+  var frames = [one.display(), two.display(), three.display()];
+
+  for (var i = 1; i <= 3; ++i) {
+  (function(index) {
+    setTimeout(function() {
+      (frames[index-1]);
+      }, i * 1000);
+    })(i);
+  }
+
 	</script>
 	<div> Some text </div>
 	<!-- <script>
@@ -30,7 +127,7 @@
 		eu.display();
 		eu.displayColor('gray');
 	</script> -->
-</body>
+
 
 
 <!-- Display an image from the asset pipeline -->
